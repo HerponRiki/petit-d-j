@@ -49,6 +49,8 @@ label start:
 
     j "*Sigh* I still have yet to fold those clothes..."
 
+    j "And Mark left his fucking documents all over the dresser."
+
     j "Oh well."
 
     ## She is supposed to have a sprite where she is only in a bra, but thats not done yet.
@@ -56,7 +58,7 @@ label start:
 
     scene kitchen
     with fade
-    
+
     show june downsad sad at left
 
     j "I'm gonna Umma the gumma outta you."
