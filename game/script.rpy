@@ -1,13 +1,14 @@
-﻿# The script of the game goes in this file.
+﻿############################################################################################################################################################
+# Things for you to do:
+#
+# Write dialogue for each choice, and the expressions that would go along with it.
+# Change the mood variables for each choice to fit your needs.
+##########################################################################################################################################################
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+# The game starts here.
 
 define j = Character("June")
 define m = Character("Mark")
-
-
-# The game starts here.
 
 label start:
     
@@ -311,6 +312,12 @@ label serve:
     if drink == 2:
         jump alcoholism
 
+    if drink == 3:
+        jump sour
+
+    if drink == 4:
+        jump caffiene
+
 
 
 label keepbuying:
@@ -334,6 +341,21 @@ label alcoholism:
 
     jump foodcont
 
+
+label sour:
+
+    # insert dialogue and expressions here
+
+    jump foodcont
+
+
+label caffiene:
+
+    # insert dialogue and expressions here
+
+    jump foodcont
+
+
 ##############################################################################################################################################################
 # Time for food conversations!!!
 # same process as before lads!
@@ -346,6 +368,9 @@ label foodcont:
 
     if food == 2:
         jump poser
+
+    if food == 3:
+        jump perfect
 
 
 
@@ -371,6 +396,16 @@ label poser:
     jump sidecont
 
 
+label perfect:
+
+    # insert dialogue and expressions here
+
+    jump sidecont
+
+
+
+
+
 ##############################################################################################################################################################
 # Time for side conversations!!!
 # same process as before lads!
@@ -384,6 +419,11 @@ label sidecont:
     if sides == 2:
         jump omeal
 
+    if sides == 3:
+        jump foot
+
+    if sides == 4:
+        jump nothin
 
 label toasty:
 
@@ -403,6 +443,20 @@ label omeal:
     m "do not disrespect oatmeal in this house."
 
     j "disrespect these nuts fucker."
+
+    jump ending
+
+
+label foot:
+
+    # insert dialogue and expressions here
+
+    jump ending
+
+
+label nothin:
+
+    # insert dialogue and expressions here
 
     jump ending
 
