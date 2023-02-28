@@ -1,0 +1,22 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 106: expected statement.
+    mood = mood + 1
+         ^
+
+File "game/script.rpy", line 123: expected statement.
+    mood += 0
+         ^
+
+File "game/script.rpy", line 138: expected statement.
+    mood -= 1
+          ^
+
+File "game/script.rpy", line 151: expected statement.
+    mood += 0
+         ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Tue Feb 28 00:44:28 2023
