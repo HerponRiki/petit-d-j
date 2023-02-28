@@ -1,22 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 142, in script
-    jump wotah
-ScriptError: could not find label 'wotah'.
+  File "game/script.rpy", line 493, in script
+    j ":["
+Exception: String ':[' ends with an open format operation.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 142, in script
-    jump wotah
-  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\ast.py", line 1974, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\script.py", line 927, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'wotah'.
+  File "game/script.rpy", line 493, in script
+    j ":["
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\exports.py", line 1373, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\character.py", line 1253, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\character.py", line 1172, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\character.py", line 1152, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\substitutions.py", line 278, in substitute
+    s = formatter.vformat(s, (), kwargs) # type: ignore
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 174, in _vformat
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\substitutions.py", line 162, in parse
+    raise Exception("String {0!r} ends with an open format operation.".format(s))
+Exception: String ':[' ends with an open format operation.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 petit dej 1.0
-Tue Feb 28 00:49:05 2023
+Tue Feb 28 01:47:11 2023

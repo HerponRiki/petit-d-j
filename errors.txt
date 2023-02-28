@@ -2,21 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 106: expected statement.
-    mood = mood + 1
+File "game/script.rpy", line 479: expected ':' not found.
+    else if mood >= 2:
          ^
 
-File "game/script.rpy", line 123: expected statement.
-    mood += 0
-         ^
-
-File "game/script.rpy", line 138: expected statement.
-    mood -= 1
-          ^
-
-File "game/script.rpy", line 151: expected statement.
-    mood += 0
-         ^
+File "game/script.rpy", line 482: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Feb 28 00:44:28 2023
+Tue Feb 28 01:44:01 2023

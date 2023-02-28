@@ -212,7 +212,7 @@ label oml:
 
     j "this is where we make alex mald using cherry tomatoes and a pink floyd shirt."
 
-    $ mood += 1
+    $ mood -= 1
     $ food = 2
 
     jump cont2
@@ -291,7 +291,7 @@ label nan:
 
     j "wow really? nothing? I JUST TOLD YOU WE CAN'T HAVE JUST PROTEIN DUMBASS."
 
-    $ mood += 1
+    $ mood -= 1
     $ sides = 4
 
     jump serve
@@ -344,6 +344,7 @@ label alcoholism:
 
 label sour:
 
+    "test"
     # insert dialogue and expressions here
 
     jump foodcont
@@ -351,6 +352,7 @@ label sour:
 
 label caffiene:
 
+    "test"
     # insert dialogue and expressions here
 
     jump foodcont
@@ -398,6 +400,7 @@ label poser:
 
 label perfect:
 
+    "test"
     # insert dialogue and expressions here
 
     jump sidecont
@@ -448,7 +451,8 @@ label omeal:
 
 
 label foot:
-
+    
+    "test"
     # insert dialogue and expressions here
 
     jump ending
@@ -456,6 +460,7 @@ label foot:
 
 label nothin:
 
+    "test"
     # insert dialogue and expressions here
 
     jump ending
@@ -464,17 +469,20 @@ label nothin:
 ##############################################################################################################################################################
 # OH BOY, its the ending! aren't you glad you made it all this way? 
 # The process is quite simple here too, im sure you can figure it out by now.
+# If you can't, here is what you must do.
+# change the mood variables to your liking,
+# add dialogue and expressions.
 ########################################################################################################################################################
 
 label ending:
 
-    if mood == -1:
+    if mood <= -1:
         jump silent
 
     if mood == 0:
         jump eh
 
-    if mood == 1:
+    if mood >= 1:
         jump yay
 
 
@@ -482,7 +490,7 @@ label silent:
 
     m "..."
 
-    j ":["
+    j "sad"
 
     return
 
@@ -491,15 +499,15 @@ label eh:
 
     m "ty for bfast"
 
-    j ":|"
+    j "ok"
 
     return
     
-label silent:
+label yay:
 
     m "Thanks for breakfast June. We should do this again tomorrow."
 
-    j ":]"
+    j "happi"
 
     return
 
