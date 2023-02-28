@@ -14,14 +14,14 @@ label start:
     # variable used to track which ending you get.
     $ mood = 0
 
-    # variables to track which drink and food you chose
+    # variables to track which drink and food you chose.
     $ drink = 0
     $ food = 0
     $ sides = 0
 
-
-
-
+    ##############################################################################
+    # story starts here.
+    ##############################################################################
 
     scene bathroom
     with fade
@@ -87,6 +87,9 @@ label start:
 
     j "What to drink..."
 
+########################################################################################################
+# The start of drink choices
+########################################################################################################
 
 menu:
 
@@ -166,8 +169,9 @@ label coff:
 
     jump cont
 
-
+########################################################################################################
 # all choices converge back here to make the choice for food.
+########################################################################################################
 
 label cont:
 
@@ -187,7 +191,9 @@ menu:
     "Parfait":
         jump parf
 
+########################################################################################################
 # remember to change the mood numbers for this part! Idk which choice is good or bad!
+########################################################################################################
 
 label bne:
 
@@ -221,7 +227,9 @@ label parf:
     jump cont2
 
 
-# End of Protein Choices.
+##############################################################################
+# Start of Side Choices
+##############################################################################
 
 label cont2:
 
@@ -244,8 +252,9 @@ menu:
     "Nothing":
         jump nan
 
-
+##################################################################################################################################
 # remember to change the mood numbers for this part! Idk which choice is good or bad!
+##################################################################################################################################
 
 label toes:
 
@@ -287,11 +296,12 @@ label nan:
     jump serve
 
 
+########################################################################################################
 # Here is where the petit dej is served. 
 # mood will be used right at the end to change mark's reaction.
 # use drink, food, and side to give the player dialogue.
 # Example given below.
-
+########################################################################################################
 
 label serve:
 
@@ -324,15 +334,125 @@ label alcoholism:
 
     jump foodcont
 
+##############################################################################################################################################################
+# Time for food conversations!!!
+# same process as before lads!
+##################################################################################################################################
+
+label foodcont:
+
+    if food == 1:
+        jump baconegg
+
+    if food == 2:
+        jump poser
 
 
 
+label baconegg:
+
+    j "barbecue bacon burger"
+
+    m "a hot side of apple pie"
+
+    j "2 number 45s, and a large soda"
+
+    jump sidecont
 
 
+label poser:
+
+    j "I AM NOT A POSER JUST CUZ IM WEARIN DIS SHIRT"
+
+    m "haha fake fan Ummagumma better album"
+
+    j "fok u m8 im fucking minging"
+
+    jump sidecont
 
 
+##############################################################################################################################################################
+# Time for side conversations!!!
+# same process as before lads!
+##################################################################################################################################
+
+label sidecont:
+
+    if sides == 1:
+        jump toasty
+
+    if sides == 2:
+        jump omeal
 
 
+label toasty:
 
+    j "People underestimate the power of toast. Like, twice cooked bread with some butter? sounds boring but tis the best thing ever made."
+
+    m "Couldn't agree more june, youre so based."
+
+    j "thanks mark, youre also based. mwah."
+
+    jump ending
+
+
+label omeal:
+
+    j "oatmeal is like a peasant dish."
+
+    m "do not disrespect oatmeal in this house."
+
+    j "disrespect these nuts fucker."
+
+    jump ending
+
+
+##############################################################################################################################################################
+# OH BOY, its the ending! aren't you glad you made it all this way? 
+# The process is quite simple here too, im sure you can figure it out by now.
+########################################################################################################################################################
+
+label ending:
+
+    if mood == -1:
+        jump silent
+
+    if mood == 0:
+        jump eh
+
+    if mood == 1:
+        jump yay
+
+
+label silent:
+
+    m "..."
+
+    j ":["
 
     return
+
+
+label eh:
+
+    m "ty for bfast"
+
+    j ":|"
+
+    return
+    
+label silent:
+
+    m "Thanks for breakfast June. We should do this again tomorrow."
+
+    j ":]"
+
+    return
+
+
+##############################################################################################################################################################
+# YOU MADE IT TO THE END, HOORAY!!!!!
+# Calvin is proud of you!
+########################################################################################################################################################
+
+    
