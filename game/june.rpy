@@ -1,6 +1,10 @@
 ## layering all of june's expressions n shit here
 ## yes i know there is an easier way BUT IT DONT FUCKIGN WORK SO LIVE WITH THIS COCKSUCKER!
 
+## feel free to change the attribute names to make it easier to code the story. 
+## Ex: changing 'attribute forward default:' to 'attribute f default:'
+
+
 layeredimage june:
 
     always "june/june_base.png"
@@ -32,7 +36,7 @@ layeredimage june:
             "june/eyebrows/june_eyebrows_confused.png"
 
         
-    group mouth auto:
+    group mouth:
         attribute happy default:
             "june/mouth/june_mouth_happy.png"
 
@@ -44,4 +48,18 @@ layeredimage june:
 
         attribute yell:
             "june/mouth/june_mouth_yell.png"
+
+    group emotion:
+        attribute none default:
+            "june/emotion/june_emotion_none.png"
+
+        attribute blush:
+            "june/emotion/june_emotion_blush.png"
+
+        attribute tiredopen:
+            "june/emotion/june_emotion_tiredopen.png"
+
+        attribute tiredsquint:
+            "june/emotion/june_emotion_tiredsquint.png"
+
 
