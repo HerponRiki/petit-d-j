@@ -165,7 +165,7 @@ label oj:
 
     # Unlocks "Add another bottle to the shopping list."
 
-    $ mood += 0
+    $ mood -= 1
     $ drink = 2
 
     jump cont
@@ -240,7 +240,11 @@ label bne:
 
     "Can't go wrong with just bacon and eggs."
 
-    $ mood += 1
+    "You fry the bacon and use the fat to fry the eggs."
+
+    "It smells great."
+
+    $ mood += 0
     $ food = 1
 
     jump cont2
@@ -280,7 +284,7 @@ label oml:
     hide mark
     with easeoutright
 
-    'He walks back to his couch, grumbling about how "Ummagumma is a better album anyways..."' 
+    'He walks back to his couch, grumbling about how "Ummagumma is a better album..."' 
 
     show june oneup sad
 
@@ -306,7 +310,11 @@ label parf:
 
     "Despite parfait meaning perfect in French, you make two extremely subpar parfaits."
 
-    "The making of the parfaits brings you back to simpler times in your relationship, the times where you two would go on cute dates without a care in the world."
+    "The making of the parfaits brings you back to simpler times in your relationship."
+
+    "The times where you two would go on cute dates without a care in the world."
+
+    show june side downsad
 
     "Oh, how the time has passed."
 
@@ -348,9 +356,13 @@ menu:
 
 label toes:
 
-    j "lick my toes you bum."
+    "Toast is a weird concept when you think about it."
 
-    $ mood += 1
+    "You bake the bread, then cook it again, and somehow it becomes exponentially better."
+
+    "Such a simple concept, yet so effective."
+
+    $ mood += 0
     $ sides = 1
 
     jump serve
@@ -358,9 +370,15 @@ label toes:
 
 label oat:
 
-    j "Can't go wrong with a classic I guess."
+    "Can't go wrong with oatmeal."
 
-    $ mood += 0
+    "It's never extremely good but never extremely bad."
+
+    "Just always extremely mid."
+
+    "But maybe thats what we need sometimes."
+
+    $ mood += 1
     $ sides = 2
 
     jump serve
@@ -368,7 +386,21 @@ label oat:
 
 label fwut:
 
-    j "fwuit gummi"
+    show june oneup
+
+    "You go to grab a fruit but it turns out they're all fake."
+
+    "You could've sworn you had fresh fruit in that basket."
+
+    show june normal side
+
+    "You open the fridge in hopes for some kind of fruit."
+
+    show june downmad
+
+    "A single overripe banana."
+
+    j "I am {b}not{/b} eating that."
 
     $ mood -= 1
     $ sides = 3
@@ -463,11 +495,37 @@ label keepbuying:
 
 label alcoholism:
 
-    j "mmm i love alcohol in my oj"
+    j "Add another bottle to the shopping list."
 
-    m "you put alcohol in this?"
+    m "What bottle?"
 
-    j "yea fuck u m9 we getting plastered."
+    j "You know the one. The one that we are both too familiar with."
+
+    m "...{w=0.5}Got it."
+
+    m "Did you pour some into your OJ again?"
+
+    show june oneup
+
+    j "Does it matter?"
+
+    m "Isn't it a bit early for drinking?"
+
+    show june side downmad
+
+    j "For you maybe, but I don't have a job so I could care less."
+
+    m "Try not to get plastered before noon."
+
+    show june forward yell
+
+    j "As if you chain smoking and getting plastered at midnight is somehow better."
+
+    m "Don't bring my smoking into this."
+
+    show june side sad
+
+    j "Don't talk shit about my tendencies then."
 
     jump foodcont
 
@@ -567,6 +625,8 @@ label foodcont:
 
     show june none forward normal sad at left
 
+    pause(1)
+
     if food == 1:
         jump baconegg
 
@@ -580,11 +640,33 @@ label foodcont:
 
 label baconegg:
 
-    j "barbecue bacon burger"
+    j "Bacon and eggs is one of my favourite breakfast items."
 
-    m "a hot side of apple pie"
+    show june happy
 
-    j "2 number 45s, and a large soda"
+    j "so incredibly simple but so incredibly rewarding."
+
+    m "It's even better when the eggs are sunny side up and you have some toast to dip."
+
+    if sides == 1:
+
+        show june both up
+
+        j "Well, good thing I made toast today."
+
+        m "This is perfect."
+
+        mood +=1
+
+    else:
+
+        show june side
+
+        j "Maybe next time I'll cook birds in a nest next time."
+
+        m "That would be pretty good."
+
+        mood +=0
 
     jump sidecont
 
@@ -663,6 +745,8 @@ label sidecont:
     
     show june none forward normal sad at left
 
+    pause(1)
+
     if sides == 1:
         jump toasty
 
@@ -677,32 +761,118 @@ label sidecont:
 
 label toasty:
 
-    j "People underestimate the power of toast. Like, twice cooked bread with some butter? sounds boring but tis the best thing ever made."
+    if food == 1:
 
-    m "Couldn't agree more june, youre so based."
+        "You both dip the toast in the runny yolks of the eggs and relish in the simple deliciousness of it all."
 
-    j "thanks mark, youre also based. mwah."
+        show june happy blush
+
+        j "Who knew some twice cooked bread and some half raw eggs would be one of the best combos of all time?"
+
+        m "It almost reminds me of us."
+
+        show june cheek oneup
+
+        j "...?"
+
+        m "An unlikely combo that just works so well."
+
+        m "You, a graphic designer and TV watcher. And me, a paralegal music snob."
+
+        m "Sometimes the toast is burnt or the eggs are overcooked."
+
+        m "But in the end, they still taste great together."
+
+        j "That is...{w=0.5}oddly poetic of you."
+
+        show june happy blush normal
+
+        j "I'm happy that you think of our relationship in that way."
+
+    else:
+
+        show june cheek
+
+        j "Isn't toast a weird concept?"
+
+        m "I agree. Not many things are twice cooked {i}and{/i} this tasty."
+
+        show june oneup cheek
+
+        j "What about refried beans?"
+
+        m "Those usually aren't refried. Just once fried."
+
+        show june side
+
+        j "I can't believe I've been believing their lies this whole time..."
+
+        m "A hard truth to accept, but a truth nonetheless."
+
 
     jump ending
 
 
 label omeal:
 
-    j "oatmeal is like a peasant dish."
+    j "Oatmeal is such a blank canvas."
 
-    m "do not disrespect oatmeal in this house."
+    j "There's nothing much to it, but once you add things it becomes a whole new world."
 
-    j "disrespect these nuts fucker."
+    m "Maybe thats what we are missing in life."
+
+    m "Just some kind of topping to make our lives that much better."
+
+    j "I don't know what that topping might be, but I'm sure we will figure it out."
+
+    m "I like your optimism. I'm sure we will figure it out as well."
 
     jump ending
 
 
 label foot:
-    
-    j "fresh fruit."
 
-    m "yease"
-    # insert dialogue and expressions here
+    show june oneup
+    
+    j "Where did all of our fruit go?"
+
+    m "What do you mean?"
+
+    show june side
+
+    j "That basket on the counter. It's supposed to be full of fruit."
+
+    m "Yeah, and it is."
+
+    show june downmad forward
+
+    j "They're fake."
+
+    j "Even the fruit in the fridge is gone. Where did it all go?"
+
+    m "...{w=0.5} I used it all for gardening."
+
+    show june bothup
+
+    j "I thought you gave up gardening a while ago?"
+
+    m "Yeah, and a while ago is when I used all that fruit for compost."
+
+    m "Don't pretend like you were doing to eat it."
+
+    show june downmad
+
+    j "How would you know?"
+
+    m "I rarely see that fruit basket move at all, and the fruits in the fridge always go bad."
+
+    show june yell
+
+    j "Oh, so eating all the fruit is somehow my responsibility?"
+
+    j "Why did you even bother with replacing it with fake fruit?"
+
+    m "...{w=0.5}I don't know."
 
     jump ending
 
@@ -726,6 +896,8 @@ label ending:
 
     show june none forward normal sad at left
 
+    pause(1)
+
     if mood <= -1:
         jump silent
 
@@ -748,6 +920,8 @@ label silent:
     "Somehow the room feels even colder than before."
 
     "This relationship can't possibly last."
+
+    show june downsad side
 
     j "{i}*Sigh*{/i}"
 

@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 33: play requires a file
-    play bgm
-            ^
+File "game/script.rpy", line 659: expected statement.
+    mood +=1
+         ^
+
+File "game/script.rpy", line 669: expected statement.
+    mood +=0
+         ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Feb 28 22:55:03 2023
+Wed Mar  1 03:39:02 2023
