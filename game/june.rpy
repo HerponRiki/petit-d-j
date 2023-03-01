@@ -35,6 +35,9 @@ layeredimage june:
         attribute oneup:
             "june/eyebrows/june_eyebrows_confused.png"
 
+        attribute bothup:
+            "june/eyebrows/june_eyebrows_bothup.png"
+
         
     group mouth:
         attribute happy default:

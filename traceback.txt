@@ -1,34 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 493, in script
-    j ":["
-Exception: String ':[' ends with an open format operation.
+  File "game/script.rpy", line 259, in script
+    pause(delay = 5,hard = True)  # add chopping noises.
+  File "renpy/common/000statements.rpy", line 449, in execute_pause
+    delay = eval(p["delay"])
+SyntaxError: invalid syntax (game/script.rpy, line 259)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 493, in script
-    j ":["
-  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\exports.py", line 1373, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\character.py", line 1253, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\character.py", line 1172, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\character.py", line 1152, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\substitutions.py", line 278, in substitute
-    s = formatter.vformat(s, (), kwargs) # type: ignore
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 174, in _vformat
-  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\substitutions.py", line 162, in parse
-    raise Exception("String {0!r} ends with an open format operation.".format(s))
-Exception: String ':[' ends with an open format operation.
+  File "game/script.rpy", line 259, in script
+    pause(delay = 5,hard = True)  # add chopping noises.
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
+    self.call("execute")
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 449, in execute_pause
+    delay = eval(p["delay"])
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\python.py", line 1090, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\python.py", line 1027, in py_compile
+    raise e
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\python.py", line 979, in py_compile
+    raise orig_e
+  File "C:\Users\calch\Desktop\stuff\renpy-8.0.3-sdk\renpy\python.py", line 972, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/script.rpy, line 259)
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 petit dej 1.0
-Tue Feb 28 01:47:11 2023
+Wed Mar  1 02:21:11 2023

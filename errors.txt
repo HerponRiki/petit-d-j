@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 479: expected ':' not found.
-    else if mood >= 2:
-         ^
-
-File "game/script.rpy", line 482: expected statement.
-    else:
-        ^
+File "game/script.rpy", line 33: play requires a file
+    play bgm
+            ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Feb 28 01:44:01 2023
+Tue Feb 28 22:55:03 2023
